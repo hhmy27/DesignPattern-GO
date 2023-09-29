@@ -24,11 +24,37 @@
 
 # Pros and Cons
 
-| Pros                                                                                           | Cons                                                                                                          |
-| ------------------------------------------------------------------------------------------------| --------------------------------------------------------------------------------------------------------------|
-| Avoid coupling between the code for creating a product and the code for using the product.      | Using the Factory Method pattern may introduce several new subclasses, which can potentially make the code more complex.  |
-| Comply with the Open-Closed Principle, allowing the introduction of new product types in the program without modifying existing code. |                                                                                                               |
-| Single Responsibility Principle. You can place the code for product creation in a single location within the program, making it easier to maintain the code. |                                                                                                    |
+| Pros                                                                                                                                                         | Cons                                                                                                                     |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| Avoid coupling between the code for creating a product and the code for using the product.                                                                   | Using the Factory Method pattern may introduce several new subclasses, which can potentially make the code more complex. |
+| Comply with the Open-Closed Principle, allowing the introduction of new product types in the program without modifying existing code.                        |                                                                                                                          |
+| Single Responsibility Principle. You can place the code for product creation in a single location within the program, making it easier to maintain the code. |                                                                                                                          |
+
+# Simple Factory
+
+The Factory method pattern becomes a Simple Factory pattern when the Creator interface is removed, as shown in the code
+below:
+
+```java
+class UserFactory {
+    public static function create($type) {
+        switch ($type) {
+            case 'user': return new User();
+            case 'customer': return new Customer();
+            case 'admin': return new Admin();
+            default:
+                throw new Exception('传递的用户类型错误。');
+        }
+    }
+}
+```
+
+When you create an abstract `Creator` interface for each specific creator, the Simple Factory pattern is transformed
+into the Factory Method pattern.
+
+
+
+
 
 
 
