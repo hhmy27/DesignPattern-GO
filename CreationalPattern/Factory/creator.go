@@ -1,4 +1,4 @@
-package SimpleFactory
+package Factory
 
 type ICreator interface {
 	createProduct() IProduct

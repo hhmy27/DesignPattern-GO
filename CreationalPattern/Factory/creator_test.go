@@ -1,4 +1,4 @@
-package SimpleFactory
+package Factory
 
 import (
 	. "github.com/smartystreets/goconvey/convey"
