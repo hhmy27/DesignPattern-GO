@@ -102,13 +102,13 @@ subclasses and be able to extend and modify the monster's initialization logic m
  ```go
  type Wolfman struct {
      BaseMonster
-     // 狼人特定属性
+     // Wolfman specify attributes
  }
 
  func NewWolfman() Monster {
      return &Wolfman{
          BaseMonster: BaseMonster{},
-         // 狼人特定属性的初始化
+         // init code for wolfman specify attributes
      }
  }
  ```
